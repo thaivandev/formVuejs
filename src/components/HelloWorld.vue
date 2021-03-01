@@ -14,17 +14,19 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  async created () {
-    this.msg = await this.callApi()
+  created () {
+    this.msg = this.callApi()
     alert(this.msg)
   },
   methods: {
-    callApi: () => {
-      return new Promise((resolve, reject) => {
+    callApi: async () => {
+      let a = new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve('test message')
         }, 1000)
       })
+      let b = await a
+      return b
     }
   }
 }

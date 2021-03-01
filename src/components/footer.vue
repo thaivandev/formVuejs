@@ -4,21 +4,27 @@
       <img src="@/assets/arrow_up.png" alt="" />
     </div>
     <div class="top--footer has-text-centered">
-        <div class="content">
+        <div class="content--box">
             <div class="wrap">
-              <p class="fw700">資料請求・導入のご相談</p>
-              <p>日本人スタッフがご相談を承ります</p>
+              <img src="@/assets/mail.png" alt="email"/>
+              <div class="content--text">
+                <p class="fw700">資料請求・導入のご相談</p>
+                <p>日本人スタッフがご相談を承ります</p>
+              </div>
             </div>
         </div>
         <p>
-          製品使用予定国が定めた承認等取得済製品については <br>
+          製品使用予定国が定めた承認等取得済製品につい <br class="is-hidden-desktop">ては <br class="is-hidden-touch">
           現地法人・現地代理店で直接ご購入いただける製品もございます。<br>
           まずはお気軽にお問い合わせください。
         </p>
     </div>
 
-    <div class="middle--footer social has-text-centered p30">
-        Share <i class="fa fa-twitter"></i> <i class="fa fa-facebook"></i>
+    <div class="middle--footer social has-text-centered p30 is-flex is-justify-content-center is-align-items-center">
+        <span class="is-hidden-touch"> Share </span>
+        <img class="image" src="@/assets/fb.png" alt="facebook" />
+        <img class="image" src="@/assets/tw.png" alt="twichter" />
+        <img class="image" src="@/assets/ins.png" alt="instegram" />
     </div>
 
     <div class="wrap--info container">
@@ -26,10 +32,10 @@
 
         <div class="columns wrap--images">
           <div class="column is-6">
-            <img src="@/assets/footer1.jpg" class="img-responsive" alt="" />
+            <img src="@/assets/footer1.jpg" class="img-responsive" alt="footer" />
           </div>
           <div class="column is-6">
-            <img src="@/assets/footer2.jpg" class="img-responsive" alt="" />
+            <img src="@/assets/footer2.jpg" class="img-responsive" alt="footer" />
           </div>
         </div>
 
@@ -98,7 +104,7 @@
             利用規約    <span>|</span>    個人情報保護方針    <span>|</span>    会社情報    <span>|</span>    GLOBAL
         </div>
         <p>Copyright ⓒ Jeisys Corporation All Rights Reserved.</p>
-        <p>All product information on this website is for overseas customer only.</p>
+        <p>All product information on this website is <br class="is-hidden-desktop"> for overseas customer only.</p>
     </div>
   </footer>
 </template>
@@ -123,6 +129,12 @@ export default {
       font-weight: 700
       @media (max-width: 768px)
         font-size: 17px
+
+    .social
+      img
+        margin: 0 25px
+        @media (max-width: 768px)
+          max-width: 24px
 
     .backTop
       position: fixed
@@ -168,9 +180,9 @@ export default {
         padding: 10px 0 10px 25px
 
         @media (max-width: 768px)
-          background: url('../assets/arr_li.png') no-repeat left 30px center
+          background: url('../assets/arr_li.png') no-repeat left 25px center
           background-size: 7px 7px
-          padding: 18px 0 18px 50px
+          padding: 20px 0 20px 50px
 
         a
          color: $white
@@ -178,7 +190,7 @@ export default {
       @media (max-width: 768px)
         .title
           margin-bottom: 0
-          padding: 18px 0 18px 15px
+          padding: 20px 0 20px 15px
           border-top: solid 1px white
           border-bottom: solid 1px white
 
@@ -225,22 +237,36 @@ export default {
       @media (max-width: 768px)
         margin: auto;
         max-width: 80%;
-        padding: 20px 0;
+        padding: 20px 0 30px;
 
     .top--footer
       padding: 50px 0
       background: #003a81
 
     .top--footer
+      .content--box
+        margin-bottom: 40px
       .content
         display: flex
         justify-content: center
         align-items: center
 
       .wrap
-        padding: 15px 30px
         border: solid 1px #fff
         background: linear-gradient(to right, #003a81, #006c84)
+        max-width: 615px
+        padding: 30px 0
+        margin: auto
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        font-size: 28px
+
+        img
+          margin-right: 15px
+
+        .content--text
 
         p
           margin-bottom: 0
@@ -248,6 +274,11 @@ export default {
 
           &:last-child
             margin-left: 10px
+
+        @media (max-width: 768px)
+          min-width: 310px
+          padding: 25px 0
+          font-size: 14px
 
       @media (max-width: 768px)
         padding: 40px 35px

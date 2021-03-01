@@ -1,6 +1,6 @@
 <template>
-  <div class="wrap--title">
-    <div class="back has-text-left container">
+  <div class="wrap--title" v-bind:class="formName ? 'pt-0' : ''">
+    <div class="back has-text-left container" v-bind:class="formName ? formName : ''">
       <button class="button is-inverted" v-on:click="goBack">
         <img class="" src="@/assets/arrow_left.png" />
         戻る
@@ -16,6 +16,11 @@
 <script>
 export default {
   name: 'Title',
+  props: {
+    formName: {
+      type: String
+    }
+  },
   methods: {
     goBack: function () {
       window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
@@ -33,11 +38,11 @@ export default {
     padding-top: 25px
 
     @media (max-width: 768px)
-      padding: 30px 0 50px
+      padding: 50px 0
 
     .title
       position: relative;
-      padding-bottom: 100px;
+      padding-bottom: 120px;
       border-bottom: solid 1px $primary
 
       @media (max-width: 768px)
@@ -48,7 +53,7 @@ export default {
         content: ""
         background: $primary
         position: absolute
-        bottom: 70px
+        bottom: 90px
         left: calc(50% - 50px)
         height: 1px
         width: 100px
@@ -60,7 +65,8 @@ export default {
       align-items: center
 
       @media (max-width: 768px)
-        display: none
+        &:not(.form)
+          display: none
 
       .button
         border: none

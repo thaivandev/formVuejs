@@ -34,8 +34,8 @@
       </div>
 
       <div class="has-text-centered">
-        <button class="button fw700 home">
-          <img class="image is-32x32" src="@/assets/arrow_right.png" alt="arrow right" />
+        <button class="button fw700 home" v-on:click="goHome">
+          <img class="image is-32x32" src="@/assets/ar_right.png" alt="arrow right" />
           HOMEへ戻る
         </button>
       </div>
@@ -48,6 +48,11 @@ import Title from './title'
 export default {
   components: {
     Title
+  },
+  methods: {
+    goHome: function () {
+      this.$router.push('/')
+    }
   }
 }
 </script>
@@ -69,7 +74,7 @@ export default {
         margin-bottom: 30px
 
     .dear
-      padding-bottom: 30px
+      padding-bottom: 50px
       border-bottom: solid 1px #ccc
 
     .container
@@ -95,7 +100,7 @@ export default {
       padding: 40px 0
 
       @media (max-width: 768px)
-        padding: 0 0 40px
+        padding: 0 0 30px
 
     .wrap--special
       background-color: #eff5fc
@@ -117,6 +122,6 @@ export default {
       @media (max-width: 768px)
         width: auto
         padding: 30px
-        margin: 15px 0 80px
+        margin: 15px 0 150px
 
 </style>
