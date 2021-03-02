@@ -13,7 +13,7 @@
               </div>
             </div>
         </div>
-        <p>
+        <p class="is-size-6">
           製品使用予定国が定めた承認等取得済製品につい <br class="is-hidden-desktop">ては <br class="is-hidden-touch">
           現地法人・現地代理店で直接ご購入いただける製品もございます。<br>
           まずはお気軽にお問い合わせください。
@@ -21,14 +21,14 @@
     </div>
 
     <div class="middle--footer social has-text-centered p30 is-flex is-justify-content-center is-align-items-center">
-        <span class="is-hidden-touch"> Share </span>
+        <span class="is-hidden-touch"> SHARE </span>
         <img class="image" src="@/assets/fb.png" alt="facebook" />
         <img class="image" src="@/assets/tw.png" alt="twichter" />
         <img class="image" src="@/assets/ins.png" alt="instegram" />
     </div>
 
     <div class="wrap--info container">
-        <div class="title is-6 has-text-centered no-border">当社製品に関するオンラインWEBセミナーを開催しています</div>
+        <div class="title is-6 has-text-centered no-border mb-0">当社製品に関するオンラインWEBセミナーを開催しています</div>
 
         <div class="columns wrap--images">
           <div class="column is-6">
@@ -39,11 +39,11 @@
           </div>
         </div>
 
-        <div class="title is-6 has-text-centered p30 no-bor-mobile">製品一覧</div>
+        <div class="title is-6 has-text-centered no-bor-mobile mb-50">製品一覧</div>
 
         <div class="columns is-gapless">
           <div class="column is-4">
-            <div class="title is-6">HIFU - 高密度焦点式超音波</div>
+            <div class="title is-6 x2">HIFU - 高密度焦点式超音波</div>
             <ul>
               <li>
                 <a href=""> ULTRAcel Q+ - ウルトラセルQプラ</a>
@@ -59,9 +59,9 @@
 
           <div class="column is-4">
 
-            <div class="title is-6">RF・NeedleRF - 高周波・ニードル高周波</div>
+            <div class="title is-6 x2">RF・NeedleRF - 高周波・ニードル高周波</div>
             <ul>
-              <li>
+              <li class="">
                 <a href=""> AcGen - アクジェン</a>
               </li>
               <li>
@@ -69,7 +69,7 @@
               </li>
             </ul>
 
-            <div class="title is-6 py30">C-IPL - キセノン光線</div>
+            <div class="title is-6 py30 x2">C-IPL - キセノン光線</div>
             <ul>
               <li>
                 <a href=""> cellec V - セレックV </a>
@@ -81,14 +81,14 @@
           </div>
 
           <div class="column is-4">
-            <div class="title is-6">Nd:YAG- Nd:ヤグレーザー</div>
+            <div class="title is-6 x2">Nd:YAG- Nd:ヤグレーザー</div>
             <ul>
               <li>
                 <a href=""> TRI-BEAM PREMIUM - トライビームプレミアム</a>
               </li>
             </ul>
 
-            <div class="title is-6 py30">Co2 - Co2レーザー</div>
+            <div class="title is-6 py30 x2">Co2 - Co2レーザー</div>
             <ul>
               <li>
                 <a href=""> TRI-BEAM PREMIUM - トライビームプレミアム</a>
@@ -98,6 +98,7 @@
           </div>
 
         </div>
+
     </div>
     <div class="copy--right has-text-centered">
         <div class="appendix">
@@ -125,6 +126,11 @@ export default {
   $black2: #333333;
 
   footer
+
+    .container
+      @media (min-width: 1366px)
+        max-width: 1170px !important
+
     .fw700
       font-weight: 700
       @media (max-width: 768px)
@@ -135,6 +141,7 @@ export default {
         margin: 0 25px
         @media (max-width: 768px)
           max-width: 24px
+          margin: 0 12px
 
     .backTop
       position: fixed
@@ -157,45 +164,70 @@ export default {
     .p30
       padding: 30px 0
 
+    .mb-50
+      margin-bottom: 50px !important
+      @media(max-width: 768px )
+        margin-bottom: 0 !important
+
     .wrap--info
-      padding: 100px 0 30px
+      padding: 120px 0
 
       @media (max-width: 768px)
-        padding: 30px 0 0
-        margin-bottom: 30px
+        padding: 0
+        margin-bottom: 0px
         border-bottom: solid 1px #ccc
+        .px-15-mobile
+          padding: 0 15px
 
       .wrap--images
-        padding: 30px 0
+        padding: 50px 0 90px
+        margin: 0
 
         @media (max-width: 768px)
-          max-width: 75%;
+          max-width: 280px;
+          padding: 0
           margin: auto
-          padding: 0 0 20px
+          gap: 20px
 
       ul
-       li
-        background: url('../assets/arr_li.png') no-repeat left 0px center
-        background-size: 7px 7px
-        padding: 10px 0 10px 25px
-
-        @media (max-width: 768px)
-          background: url('../assets/arr_li.png') no-repeat left 25px center
+        &:not(:last-child)
+          margin-bottom: 50px
+        li
+          background: url('../assets/arr_li.png') no-repeat left 0px center
           background-size: 7px 7px
-          padding: 20px 0 20px 50px
+          padding:  0 0 0 25px
+          margin-bottom: 25px
+          &:last-child
+            margin-bottom: 0
 
-        a
-         color: $white
+          @media (max-width: 768px)
+            background: url('../assets/arr_li.png') no-repeat left 25px center
+            background-size: 7px 7px
+            padding: 25px 0 25px 40px
+            margin-bottom: 0
+
+          a
+            color: $white
+        @media (max-width: 768px)
+          &:not(:last-child)
+            margin-bottom: 0
+          li a
+            font-size: 12px
 
       @media (max-width: 768px)
         .title
           margin-bottom: 0
-          padding: 20px 0 20px 15px
-          border-top: solid 1px white
+          padding: 50px 0 25px
+          border-top : solid 1px white
           border-bottom: solid 1px white
 
+          &.x2
+            padding: 25px 15px
+            font-size: 13px
+
           &.no-bor-mobile
-            padding: 30px 0
+            padding: 50px 0 25px
+            border: none
 
           &.no-border
             border: none
@@ -214,36 +246,41 @@ export default {
             border: none
 
     .copy--right
-      padding: 0 0 35px
+      padding: 0 0 30px
 
       p
         margin: 0
 
       @media (max-width: 768px )
-        font-size: 12px;
-        font-weight: 100;
+        font-size: 12px
+        font-weight: 100
         text-align: center
-
+        padding-bottom: 25px
         p
           max-width: 80%
           margin: auto
 
     .appendix
-      padding: 40px 0
+      padding: 0 0 50px
+      font-size: 15px
 
       span
-        padding: 0 10px
+        padding: 0 20px
 
       @media (max-width: 768px)
         margin: auto;
-        max-width: 80%;
-        padding: 20px 0 30px;
+        width: 270px;
+        padding: 50px 0 30px;
+        font-size: 12px
+        span
+          padding: 0 7px
+          &:last-child
+            display: none
 
     .top--footer
-      padding: 50px 0
+      padding: 80px 0
       background: #003a81
 
-    .top--footer
       .content--box
         margin-bottom: 40px
       .content
@@ -254,8 +291,9 @@ export default {
       .wrap
         border: solid 1px #fff
         background: linear-gradient(to right, #003a81, #006c84)
-        max-width: 615px
-        padding: 30px 0
+        max-width: 630px
+        height: 155px
+        padding: 40px 0
         margin: auto
         display: flex
         flex-wrap: wrap
@@ -267,6 +305,16 @@ export default {
           margin-right: 15px
 
         .content--text
+          p
+            &:fist-child
+              font-size: 36px
+            &:last-child
+              font-size: 22px
+            @media(max-width: 768px)
+              &:fist-child
+                font-size: 20px
+              &:last-child
+                font-size: 13px
 
         p
           margin-bottom: 0
@@ -276,19 +324,37 @@ export default {
             margin-left: 10px
 
         @media (max-width: 768px)
-          min-width: 310px
-          padding: 25px 0
+          width: 310px
+          height: 93px
+          padding: 20px 0
           font-size: 14px
+          img
+            width: 30px
 
       @media (max-width: 768px)
-        padding: 40px 35px
+        padding: 40px 30px
         font-size: 13px
+        .content--box
+          margin-bottom: 35px
+        .is-size-6
+          font-size: 13px !important
 
     .contact--thank
       color: #003a81
 
     .middle--footer
       background: #292929
+      height: 100px
+      img
+        max-height: 30px
+
+      span
+        margin: 0 25px
+
+      @media (max-width: 768px)
+        height: 60px
+        img
+          max-height: 20px
 
     .title
       color: white

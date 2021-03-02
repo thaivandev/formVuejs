@@ -6,7 +6,7 @@
         戻る
       </button>
     </div>
-    <div class="subtitle text-center primary--color is-6">
+    <div class="subtitle text-center primary--color is-6 py-15">
         日本語対応）
     </div>
     <div class="title text-center primary--color"> 資料請求・導入のご相談 </div>
@@ -35,19 +35,28 @@ export default {
     color: $primary
 
   .wrap--title
-    padding-top: 25px
+    padding-top: 35px
+
+    @media (min-width: 1366px)
+      .container
+        max-width: 1170px !important
 
     @media (max-width: 768px)
-      padding: 50px 0
+      padding: 50px 0 0
+      .py-15
+        font-size: 12px
+        padding: 0 0 15px
+        margin: 15px 0
 
     .title
       position: relative;
       padding-bottom: 120px;
       border-bottom: solid 1px $primary
+      font-size: 46px
 
       @media (max-width: 768px)
-        font-size: 25px
-        padding-bottom: 80px
+        font-size: 28px
+        padding-bottom: 100px
 
       &:after
         content: ""
@@ -58,13 +67,15 @@ export default {
         height: 1px
         width: 100px
         @media (max-width: 768px)
-          bottom: 60px
+          bottom: 75px
 
     .back
       display: flex
       align-items: center
 
       @media (max-width: 768px)
+        padding: 0 15px
+
         &:not(.form)
           display: none
 
@@ -72,9 +83,12 @@ export default {
         border: none
         font-size: 25px
         color: #003a81
+        padding: 0
 
         @media (max-width: 768px)
           font-size: 16px
+          height: 30px
+          margin-bottom: 10px
 
       img
         width: 36px
