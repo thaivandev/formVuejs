@@ -2,56 +2,67 @@
   <div class="preview__contact">
     <Title />
     <div class="has-pad container">
-      <div class="description has-text-left">
-        <p>入力内容をご確認のうえ、送信ボタンをおしてください。修正の場合はページ下部の</p>
-        <p>「修正」ボタンをおしてください</p>
-      </div>
+      <div class="px-100">
+        <div class="description has-text-left">
+          <p>入力内容をご確認のうえ、送信ボタンをおしてください。修正の場合はページ下部の</p>
+          <p>「修正」ボタンをおしてください</p>
+        </div>
 
-      <div class="name">
-        <div class="title is-6 fw700">入力内容の確認</div>
-      </div>
-
-      <div class="columns is-flex-wrap-wrap fw500 content">
-        <div class="column is-12 has-text-left gap" v-for="(value, key) in formData" :key="key" v-show="fieldName[key]">
-          <div class="columns" >
-            <div class="column is-4">
-              {{ fieldName[key] }}
+        <div class="name">
+          <div class="title is-6 fw700">入力内容の確認</div>
+        </div>
+        {{
+          $store.state
+        }}
+        <div class="columns is-flex-wrap-wrap fw500 content is-gapless gap40">
+          <div class="column is-12 has-text-left gap" v-for="(value, key) in formData" :key="key" v-show="fieldName[key]">
+            <div class="columns is-vcentered" >
+              <div class="column is-4">
+                {{ fieldName[key] }}
+              </div>
+              <div class="column is-8 py-0">
+                <div class="right">
+                  {{ Array.isArray(value) ? value.toString() : value}}
+                </div>
+              </div>
             </div>
-            <div class="column is-8 py-0">
-              <div class="right">
-                {{ Array.isArray(value) ? value.toString() : value}}
+          </div>
+
+          <div class="column is-12">
+            <div class="terms has-text-centered ">
+              <p>Jeisysからのお知らせ（日本語）の受け取りを希望しますか？</p>
+              <div class="wrap--checkbox is-justify-content-center">
+                <label  class="checkbox wrap--input">
+                  <img src="@/assets/check.png" alt="check" />
+                  <span>Jeisysからのお知らせメールを受け取る</span>
+                </label>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="column is-12">
-          <div class="terms has-text-centered ">
-            <p>Jeisysからのお知らせ（日本語）の受け取りを希望しますか？</p>
-            <div class="wrap--checkbox is-justify-content-center">
-              <label  class="checkbox wrap--input">
-                <i class="fas fa-check"></i>
-                <span>Jeisysからのお知らせメールを受け取る</span>
-              </label>
+        <div class="columns is-gapless is-flex-wrap-wrap">
+          <div class="column is-12">
+            <div class="has-text-centered wrap--button is-justify-content-center">
+              <button class="button back fw700" v-on:click="goBack">
+                <img class="image default" src="@/assets/ar_left.png" alt="arrow"/>
+                <img class="image hover left" src="@/assets/ar_right.png" alt="arrow"/>
+                修正
+              </button>
+              <button class="button submit fw700" type="submit" v-on:click="goNext">
+                <img class="image default right" src="@/assets/ar_left.png" alt="arrow"/>
+                <img class="image hover" src="@/assets/ar_right.png" alt="arrow"/>
+                送信
+              </button>
             </div>
           </div>
-        </div>
 
-        <div class="column is-12">
-          <div class="has-text-centered wrap--button is-justify-content-center">
-            <button class="button back fw700" v-on:click="goBack">
-              <img class="image" src="@/assets/arrow_left.png" />
-              修正
-            </button>
-            <button class="button submit fw700" type="submit" v-on:click="goNext"> <img class="image" src="@/assets/arrow_right.png" /> 送信</button>
+          <div class="column is-12">
+            <p class="policy">本フォームを利用して送信した場合、<br class="is-hidden-desktop"><a href="">個人情報保護方針</a> および <a href="">利用規約</a> に同意したと<br class="is-hidden-desktop">みなします。</p>
           </div>
         </div>
 
-        <div class="column is-12">
-          <p class="policy">本フォームを利用して送信した場合、<a href="">個人情報保護方針</a> および <a href="">利用規約</a> に同意したとみなします。</p>
-        </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -87,9 +98,12 @@ export default {
     }
   },
   mounted: function () {
+    console.log('aaa')
     if (localStorage.getItem('formData')) {
       try {
+        console.log('bbbb')
         this.formData = JSON.parse(localStorage.getItem('formData'))
+        console.log('cccc')
       } catch (e) {
         console.log(e)
       }
@@ -109,12 +123,25 @@ export default {
 
 <style lang="sass" scoped>
   .preview__contact
-    padding: 0 0 50px
+    padding: 0
+
+    .gap40
+      gap: 40px
+
+    .px-100
+      padding: 0 100px
+      @media(max-width: 768px)
+        padding: 0
+
+    .policy
+      margin: 20px auto 170px
 
     @media (max-width: 768px)
+
       .policy
         text-align: center
         font-size: 15px
+        margin: 30px auto 90px
         a
           text-decoration: underline
 
@@ -124,7 +151,7 @@ export default {
 
     .has-pad
       @media (max-width: 768px)
-        padding: 0 15px 50px
+        padding: 0 15px
 
     .container
       @media (min-width: 1366px)
@@ -139,20 +166,24 @@ export default {
           margin-left: 20px
 
     .description
-      max-width: 1000px
+      max-width: 770px
       margin: auto
-      padding: 50px 0
+      height: 49px
+      margin: 70px auto 100px
+      @media (max-width: 768px)
+        margin: 35px 0 55px
 
     .wrap--button
       display: flex
-      gap: 30px
+      gap: 20px
 
       @media (max-width: 768px)
-        margin-bottom: 25px
+        margin-top: 25px
 
       .button
         background: white
-        width: 300px
+        width: 223px
+        height: 85px
         padding: 40px 0
         color: #003a81
         font-size: 20px
@@ -163,15 +194,39 @@ export default {
           background: #003a81
           color: white
 
+          img
+            &.default
+              display: none
+
+            &.default.right
+              transform: rotate(180deg)
+              display: none
+
+            &.hover
+              display: block
+
+            &.hover.left
+              transform: rotate(180deg)
+
         img
           margin-right: 25px
 
+          &.default.right
+            transform: rotate(180deg)
+
+          &.hover
+            display: none
+
         @media (max-width: 768px)
-          width: auto
-          padding: 25px
+          width: 120px
+          height: 45px
+          font-size: 13px
+          padding: 0
 
           img
             width: 24px
+            margin-right: 10px
+            margin-left: 0
 
     .terms
       max-width: 750px
@@ -180,7 +235,7 @@ export default {
       padding: 30px 50px
 
       @media (max-width: 768px)
-        margin: 25px 0
+        margin: 40px 0
         padding: 25px 15px
         text-align: left !important
 
@@ -196,8 +251,6 @@ export default {
 
       @media (max-width: 768px)
         margin: 0 0 25px
-        .title
-          font-size: 14px
 
       .title
         padding-left: 10px
@@ -206,5 +259,6 @@ export default {
         font-size: 25px
         @media (max-width: 768px)
           font-size: 14px
+          margin-bottom: 10px
 
 </style>
