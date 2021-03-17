@@ -3,10 +3,10 @@
 
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
+        <div class="navbar-item">
           <img src="@/assets/logo.png"  alt="logo">
           <span class="logo1 fw700">日本語版</span>
-        </a>
+        </div>
 
         <a @click="isActive = !isActive" role="button" class="navbar-burger btn__menu is-align-items-center" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <img class="image" src="@/assets/menu.png" alt="btn menu" />
@@ -103,9 +103,11 @@ export default {
       .container
         max-width: 1170px !important
 
-    @media (max-width: 1024px)
+    @media (max-width: 1023px)
       .btn__menu
         display: flex
+        &:hover
+          background: transparent
         img
           margin-left: auto
           max-width: 25px

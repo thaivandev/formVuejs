@@ -330,6 +330,17 @@ export default {
           font-size: 14px
           img
             width: 30px
+        @media( max-width: 320px)
+          width: 240px
+          height: 73px
+          padding: 10px 0
+          p
+            font-size: 14px
+            &:last-child
+              font-size: 12px !important
+          img
+            max-width: 18px
+            margin-right: 5px
 
       @media (max-width: 768px)
         padding: 40px 30px

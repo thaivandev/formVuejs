@@ -11,7 +11,9 @@
         <div class="name">
           <div class="title is-6 fw700">入力内容の確認</div>
         </div>
-
+        {{
+          $store.state
+        }}
         <div class="columns is-flex-wrap-wrap fw500 content is-gapless gap40">
           <div class="column is-12 has-text-left gap" v-for="(value, key) in formData" :key="key" v-show="fieldName[key]">
             <div class="columns is-vcentered" >
@@ -96,9 +98,12 @@ export default {
     }
   },
   mounted: function () {
+    console.log('aaa')
     if (localStorage.getItem('formData')) {
       try {
+        console.log('bbbb')
         this.formData = JSON.parse(localStorage.getItem('formData'))
+        console.log('cccc')
       } catch (e) {
         console.log(e)
       }
@@ -125,6 +130,8 @@ export default {
 
     .px-100
       padding: 0 100px
+      @media(max-width: 768px)
+        padding: 0
 
     .policy
       margin: 20px auto 170px
@@ -134,6 +141,7 @@ export default {
       .policy
         text-align: center
         font-size: 15px
+        margin: 30px auto 90px
         a
           text-decoration: underline
 
@@ -143,7 +151,7 @@ export default {
 
     .has-pad
       @media (max-width: 768px)
-        padding: 0 15px 50px
+        padding: 0 15px
 
     .container
       @media (min-width: 1366px)
@@ -163,7 +171,7 @@ export default {
       height: 49px
       margin: 70px auto 100px
       @media (max-width: 768px)
-        padding: 0 0 60px
+        margin: 35px 0 55px
 
     .wrap--button
       display: flex
@@ -210,8 +218,10 @@ export default {
             display: none
 
         @media (max-width: 768px)
-          width: auto
-          padding: 25px
+          width: 120px
+          height: 45px
+          font-size: 13px
+          padding: 0
 
           img
             width: 24px
@@ -225,7 +235,7 @@ export default {
       padding: 30px 50px
 
       @media (max-width: 768px)
-        margin: 25px 0
+        margin: 40px 0
         padding: 25px 15px
         text-align: left !important
 
@@ -241,8 +251,6 @@ export default {
 
       @media (max-width: 768px)
         margin: 0 0 25px
-        .title
-          font-size: 14px
 
       .title
         padding-left: 10px
@@ -251,5 +259,6 @@ export default {
         font-size: 25px
         @media (max-width: 768px)
           font-size: 14px
+          margin-bottom: 10px
 
 </style>

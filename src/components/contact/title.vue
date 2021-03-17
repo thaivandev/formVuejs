@@ -46,7 +46,7 @@ export default {
       .py-15
         font-size: 12px
         padding: 0 0 15px
-        margin: 15px 0
+        margin: 0 0 15px
 
     .title
       position: relative;

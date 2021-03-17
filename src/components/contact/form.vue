@@ -15,7 +15,7 @@
             <div class="column is-12">
               <div class="columns is-vcentered is-gapless gap-15-mb">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed"><span>※</span>お問い合わせの種類</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>お問い合わせの種類</div>
                 </div>
                 <div class="column is-8" v-bind:class="formData.error.typeRequered ? 'error' : ''">
                   <div class="wrap--checkbox">
@@ -36,10 +36,10 @@
               </div>
             </div>
 
-            <div class="column is-12">
+            <div class="column is-12 mb-15">
               <div class="columns is-vcentered is-gapless mb-0">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed"><span>※</span>ご導入予定国</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>ご導入予定国</div>
                 </div>
                 <div class="column is-8" v-bind:class="formData.error.country ? 'error' : ''">
                   <div class="wrap--radio">
@@ -62,9 +62,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-gapless">
+              <div class="columns is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed py-15"><span>※</span>ご検討中の機器</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>ご検討中の機器</div>
                 </div>
                 <div class="column is-8" v-bind:class="formData.error.device ? 'error' : ''">
                   <div class="wrap--checkbox">
@@ -133,9 +133,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed"><span>※</span>導入検討施設の開業状況</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>導入検討施設の開業状況</div>
                 </div>
                 <div class="column is-8" v-bind:class="formData.error.openStatus ? 'error' : ''">
                   <div class="wrap--radio">
@@ -157,9 +157,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed">ご連絡先施設名・会社名</div>
+                  <div class="title is-6 name--filed mb-15">ご連絡先施設名・会社名</div>
                 </div>
                 <div class="column is-8">
                   <input class="input is-medium" name="companyName" @input="inputHandler" v-model="formData.companyName" type="text" value="" />
@@ -168,9 +168,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed">部署名</div>
+                  <div class="title is-6 name--filed mb-15">部署名</div>
                 </div>
                 <div class="column is-8">
                   <input class="input is-medium" name="department" v-model="formData.department" @input="inputHandler" type="text" value="" placeholder="個人の方は記入不要" />
@@ -179,9 +179,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed"><span>※</span>お名前</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>お名前</div>
                 </div>
                 <div class="column is-8"  v-bind:class="formData.error.name ? 'error' : ''">
                   <input
@@ -199,9 +199,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed"><span>※</span>ふりがな</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>ふりがな</div>
                 </div>
                 <div class="column is-8 "  v-bind:class="formData.error.furigana ? 'error' : ''">
                   <input class="input is-medium" @input="inputHandler" name="furigana" v-model="formData.furigana" type="text" value="" placeholder="やまだ たろう" />
@@ -210,9 +210,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed"><span>※</span>電話番号</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>電話番号</div>
                 </div>
                 <div class="column is-8" v-bind:class="formData.error.phoneNumber ? 'error' : ''">
                   <input class="input is-medium" v-model="formData.phoneNumber" @input="inputHandler" name="phoneNumber" type="text" value="" placeholder="例：03-1234-5678" />
@@ -222,9 +222,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed"><span>※</span>メールアドレス</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>メールアドレス</div>
                 </div>
                 <div class="column is-8" v-bind:class="formData.error.email ? 'error' : ''">
                   <input class="input is-medium" @input="inputHandler" name="email" v-model="formData.email" type="text" value="" placeholder="abc@jeisys.com" />
@@ -233,9 +233,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns ">
+              <div class="columns is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed py-15"><span>※</span>ご希望のご連絡方法</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>ご希望のご連絡方法</div>
                 </div>
                 <div class="column is-8" v-bind:class="formData.error.contactFavorite ? 'error' : ''">
                   <div class="wrap--checkbox">
@@ -262,7 +262,7 @@
                       <input type="checkbox" v-model="formData.contactFavorite" value="オンライン商談（別途日時相談）">
                       <span class="checkmark"></span>
                       <span class="layer"></span>
-                      <span class="isMobile">オンライン商談（別途日時相談）</span>
+                      <span class="isMobile">オンライン商談 <br class="hidden-desktop">（別途日時相談）</span>
                     </label>
                   </div>
                   <div class="w-full has-text-right add-more-performance">
@@ -273,9 +273,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed"><span>※</span>郵便番号</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>郵便番号</div>
                 </div>
                 <div class="column is-8 zip-code" v-bind:class="formData.error.zipCode ? 'error' : ''">
                   <div class="box--zip">
@@ -288,9 +288,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed"><span>※</span>都道府県</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>都道府県</div>
                 </div>
                 <div class="column is-8" v-bind:class="formData.error.province ? 'error' : ''">
                   <div class="select is-medium w-full">
@@ -303,9 +303,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed"><span>※</span>市区町村</div>
+                  <div class="title is-6 name--filed mb-15"><span>※</span>市区町村</div>
                 </div>
                 <div class="column is-8" v-bind:class="formData.error.city ? 'error' : ''">
                   <input class="input is-medium" @input="inputHandler" name="city" v-model="formData.city" type="text" value="" placeholder="新宿区" />
@@ -314,9 +314,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed">町番地</div>
+                  <div class="title is-6 name--filed mb-15">町番地</div>
                 </div>
                 <div class="column is-8">
                   <input class="input is-medium"  v-model="formData.town" type="text" value="" placeholder="1-1-1" />
@@ -325,9 +325,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-vcentered is-gapless">
+              <div class="columns is-vcentered is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed">ビル名</div>
+                  <div class="title is-6 name--filed mb-15">ビル名</div>
                 </div>
                 <div class="column is-8">
                   <input class="input is-medium" v-model="formData.buildingName" type="text" value="" placeholder="例：03-1234-5678" />
@@ -336,9 +336,9 @@
             </div>
 
             <div class="column is-12">
-              <div class="columns is-gapless">
+              <div class="columns is-gapless mb-25">
                 <div class="column is-4">
-                  <div class="title is-6 name--filed mt-20">その他</div>
+                  <div class="title is-6 name--filed mb-15 mt-20">その他</div>
                 </div>
                 <div class="column is-8">
                   <textarea class="textarea is-medium" v-model="formData.other" value="" placeholder="ご質問・ご希望等ありましたらご記入ください" ></textarea>
@@ -353,7 +353,7 @@
                   <label  class="checkbox wrap--input terms">
                     <input type="checkbox" v-model="formData.terms"  value="Jeisysからのお知らせメールを受け取る"/>
                     <span class="checkmark"></span>
-                    <span v-bind:class="!formData.terms ? 'error' : ''">Jeisysからのお知らせメールを受け取る</span>
+                    <span class="terms-text" v-bind:class="!formData.terms ? 'error' : ''">Jeisysからのお知らせメールを受け取る</span>
                   </label>
                 </div>
               </div>
@@ -455,14 +455,19 @@ export default {
         return
       }
 
+      this.changeScore()
+
       localStorage.removeItem('formData')
       localStorage.setItem('formData', JSON.stringify(this.formData))
       this.$router.push('/preview')
-      e.preventDefault()
+      // e.preventDefault()
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       return re.test(email)
+    },
+    changeScore: function () {
+      this.$store.dispatch('saveFormData', {...this.formData})
     }
   },
   mounted: function () {
@@ -497,9 +502,20 @@ export default {
     @media (max-width: 768px)
       padding: 0 15px
       font-size: 14px
+      .column.mb-15, .mb-15
+        margin-bottom: 15px
+      .columns.mb-25
+        margin-bottom: 25px
+    @media (max-width: 360px)
+      font-size: 13px
+    @media (max-width: 320px)
+      font-size: 11px
 
     .border--bottom
       border-bottom: solid 1px #ccc
+      @media (max-width: 768px)
+        margin: 32px 0 25px
+
     .py-15
       padding-top: 15px
 
@@ -609,8 +625,10 @@ export default {
 
         @media (max-width: 768px)
           width: 180px
+          height: 50px
           font-size: 13px
-          padding: 25px 0
+          padding: 0
+          margin: 45px 0 90px
 
         img
           margin-right: 15px
@@ -634,8 +652,10 @@ export default {
             min-height: unset
 
         @media (max-width: 768px)
-          margin: 25px 0
-          padding: 25px 15px
+          margin: 30px auto 0
+          font-size: 14px
+          padding: 15px
+          height: 100px
           text-align: left !important
 
         .wrap--input
@@ -643,7 +663,8 @@ export default {
 
           span
             color: black !important
-
+            &.terms-text
+              color: #003a81 !important
             &.error
               color: red !important
 
@@ -681,7 +702,7 @@ export default {
 
           .wrap--input.radio
             height: auto
-            padding: 25px 0 5px
+            padding: 0
             border: none
 
       .wrap--input
@@ -706,7 +727,12 @@ export default {
 
         &.terms
           width: 400px
-          margin: 0
+          min-width: 400px
+          margin: 0 auto
+
+          @media (max-width: 768px)
+            min-width: 250px
+            width: auto
 
         input:checked ~ .layer
           position: absolute
@@ -789,13 +815,11 @@ export default {
               top: calc(50% - 3px)
               left: calc(50% - 3px)
 
-      input, select, .select
+      input, select, .select, textarea
         min-height: 60px
         @media (max-width: 768px)
           min-height: 46px
-          font-size: 16px
-
-        @media (max-width: 768px)
+          font-size: 14px
           &.radio
             &.wrap--input
               border: none
@@ -805,5 +829,9 @@ export default {
           span
             &:last-child
               width: calc(100% - 24px)
+
+      textarea
+        @media(max-width: 768px)
+          min-height: 130px
 
 </style>
